@@ -51,4 +51,7 @@ esac
 make $MAKE_TARGETS
 check_unignored_build_artifacts
 
+make && make -C contrib/scalar test
+make && make -C contrib/subtree test || exit 1
+
 save_good_tree
