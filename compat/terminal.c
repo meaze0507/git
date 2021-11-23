@@ -256,7 +256,7 @@ static char *shell_prompt(const char *prompt, int echo)
 	static struct strbuf buffer = STRBUF_INIT;
 	int prompt_len = strlen(prompt), len = -1, code;
 
-	child.argv = read_input;
+	strvec_pushv(&child.args, read_input);
 	child.in = -1;
 	child.out = -1;
 	child.silent_exec_failure = 1;
